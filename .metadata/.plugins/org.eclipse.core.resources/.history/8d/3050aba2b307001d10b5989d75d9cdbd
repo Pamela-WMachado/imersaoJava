@@ -1,0 +1,32 @@
+import java.net.URI;
+import java.net.http.HttpClient;
+import java.net.http.HttpRequest;
+import java.net.http.HttpResponse;
+import java.net.http.HttpResponse.BodyHandlers;
+
+public class App {
+
+	public static void main(String[] args) throws Exception {
+		//abrir conexão HTTP (protocolo de comunicacao da web) e buscar o top250 filmes
+		
+		String url = "https://alura-filmes.herokuapp.com/conteudos";
+		URI endereco = URI.create(url);
+		//criar o http client e chamar o metodo newHttpClient() e guarda-lo em uma var
+		HttpClient client = HttpClient.newHttpClient();
+		//criar uma requisiçao passando o endereço da URI
+		//o metodo newBuilder dentro da classe HttpRequest devolve um build de requests, com metodos get, put, delete
+		HttpRequest request = HttpRequest.newBuilder(endereco).GET().build();
+		//transformando os dados em string
+		HttpResponse<String> response = client.send(request, BodyHandlers.ofString());
+		String body = response.body();
+		
+		System.out.println(body);
+		//parsear os dados => filtrar os dados que nos interessam (titulo, poster e classificação)
+		
+		//exibit e manipular os dados
+		
+		
+		
+	}
+
+}
