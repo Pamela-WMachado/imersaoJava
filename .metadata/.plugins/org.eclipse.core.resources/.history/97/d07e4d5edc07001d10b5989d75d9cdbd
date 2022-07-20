@@ -13,7 +13,6 @@ public class App {
 		
 		Scanner scan = new Scanner(System.in);
 		String selectedMovie;
-		Float rating;
 		//1 abrir conexão HTTP (protocolo de comunicacao da web) e buscar o top250 filmes
 		
 		String url = "https://alura-filmes.herokuapp.com/conteudos";
@@ -47,14 +46,10 @@ public class App {
 		System.out.println("Selecione um filme da lista: ");
 		selectedMovie = scan.nextLine();
 		for (Map<String, String> filme: listaDeFilmes ) {
-			if (selectedMovie.equals(filme.get("title"))) {
-				System.out.println("Dê uma nota para o filme: ");
-				rating = scan.nextFloat();
-				System.out.println("");
-				System.out.println("Título do filme: " + filme.get("title"));
-				System.out.println("Poster: " + filme.get("image"));
-				System.out.println("Nota no IMDB: " + filme.get("imDbRating"));
-				System.out.println("Nota pessoal: " + rating);
+			if (selectedMovie == filme.get("title")) {
+				System.out.println(filme.get("title"));
+				System.out.println(filme.get("image"));
+				System.out.println(filme.get("imDbRating"));
 				System.out.println("");
 			}
 		}

@@ -5,15 +5,10 @@ import java.net.http.HttpResponse;
 import java.net.http.HttpResponse.BodyHandlers;
 import java.util.List;
 import java.util.Map;
-import java.util.Scanner;
 
 public class App {
 
 	public static void main(String[] args) throws Exception {
-		
-		Scanner scan = new Scanner(System.in);
-		String selectedMovie;
-		Float rating;
 		//1 abrir conexão HTTP (protocolo de comunicacao da web) e buscar o top250 filmes
 		
 		String url = "https://alura-filmes.herokuapp.com/conteudos";
@@ -44,20 +39,9 @@ public class App {
 
 		}
 		
-		System.out.println("Selecione um filme da lista: ");
-		selectedMovie = scan.nextLine();
-		for (Map<String, String> filme: listaDeFilmes ) {
-			if (selectedMovie.equals(filme.get("title"))) {
-				System.out.println("Dê uma nota para o filme: ");
-				rating = scan.nextFloat();
-				System.out.println("");
-				System.out.println("Título do filme: " + filme.get("title"));
-				System.out.println("Poster: " + filme.get("image"));
-				System.out.println("Nota no IMDB: " + filme.get("imDbRating"));
-				System.out.println("Nota pessoal: " + rating);
-				System.out.println("");
-			}
-		}
+		
+		
+		
 	}
 
 }
