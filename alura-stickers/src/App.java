@@ -14,8 +14,8 @@ public class App {
 		Scanner scan = new Scanner(System.in);
 		String selectedMovie;
 		Float rating;
-		//1 abrir conexão HTTP (protocolo de comunicacao da web) e buscar o top250 filmes
 		
+		//1 abrir conexão HTTP (protocolo de comunicacao da web) e buscar o top250 filmes
 		String url = "https://alura-filmes.herokuapp.com/conteudos";
 		URI endereco = URI.create(url);
 		//criar o http client e chamar o metodo newHttpClient() e guarda-lo em uma var

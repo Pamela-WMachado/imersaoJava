@@ -1,0 +1,17 @@
+
+public class StickerMaker {
+	
+	public void criar() {
+		//leitura de imagem
+		
+		//criar nova img em memória com transparencia e novo tamanho
+		
+		//copiar imagem original para nova img 
+		
+		//escrever uma frase na nova img
+		
+		//escrever a nova img em um arquivo
+		
+		
+	}
+}
